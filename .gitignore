@@ -1,0 +1,7 @@
+*~
+*.bk
+*.bak
+*.old
+*.swp
+
+**/node_modules/
