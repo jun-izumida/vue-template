@@ -4,4 +4,7 @@
 *.old
 *.swp
 
+*.log
+/dist/js/*.js
+/dist/js/*.map
 **/node_modules/

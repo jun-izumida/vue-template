@@ -7,7 +7,7 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-	entry: './src/js/app.js',
+	entry: './src/main.ts',
 	output: {
 		path: path.resolve(__dirname, 'dist/js'),
 		filename: "bundle.js"
@@ -44,7 +44,7 @@ module.exports = {
 		alias: {
 			vue$: "vue/dist/vue.esm.js"
 		},
-		extensions: ["*", ".js", ".vue", ".json", "ts"]
+		extensions: ["*", ".js", ".vue", ".json", ".ts"]
 	},
 	plugins: [
 		new VueLoaderPlugin()
@@ -63,10 +63,11 @@ module.exports = {
 	},
 	target: ["web", "es5"],
 	devServer: {
-		publicPath: '/dist/js/',
+		contentBase: path.join(__dirname, 'dist'),
+		publicPath: 'dist/js/',
 		watchContentBase: true,
 		open: true,
 		openPage: "index.html",
-		host: "0.0.0.0"
+		host: "localhost"
 	}
 };
